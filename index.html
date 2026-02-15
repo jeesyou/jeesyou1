@@ -10,8 +10,19 @@
 <body>
     <div class="container">
         <h1>2026 새해 로또 번호 추첨기</h1>
+        
         <div id="numbers-container" class="numbers-container"></div>
         <button id="generate-button" class="generate-button">번호 생성</button>
+    </div>
+
+    <div class="container info-container">
+        <h2>실시간 정보</h2>
+        <div class="button-group">
+            <button id="getWeatherBtn" class="info-button">서울 날씨</button>
+            <button id="getKosdaqBtn" class="info-button">코스닥 지수</button>
+        </div>
+        <div id="weatherInfo" class="info-box"></div>
+        <div id="kosdaqInfo" class="info-box"></div>
     </div>
     <script src="main.js"></script>
 </body>
