@@ -1,1 +1,112 @@
-/* Add styles here */
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><g fill-opacity="0.2"><rect fill="%232a2a2a" width="800" height="800"/><path fill="%233a3a3a" d="M700 0L0 700V0h700zM800 700L100 0v700h700z"/></g></svg>');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.container {
+    text-align: center;
+    background: rgba(42, 42, 42, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.numbers-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    transform: scale(0);
+}
+
+.generate-button {
+    background: linear-gradient(45deg, #ff4757, #ff6348);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.generate-button:hover, .generate-button:focus {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 71, 87, 0.8);
+    outline: none;
+}
+
+@keyframes popIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .generate-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
